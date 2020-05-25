@@ -44,7 +44,7 @@ namespace TestChat.Server.Hubs
             userLookup.Remove(id);
             await Clients.AllExcept(Context.ConnectionId).SendAsync(Messages.Receive, username, $"{username} has left the room");
 
-            await base.OnDisconnectedAsync(e);
+            await base.OnDisconnectedAsync(exception);
         }
     }
 }
